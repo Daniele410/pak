@@ -55,9 +55,9 @@ public class Model extends JPanel implements ActionListener {
             17, 16, 16, 16, 16, 16, 16, 16, 16, 20, 0, 0, 0, 0, 21,
             17, 16, 16, 16, 24, 16, 16, 16, 16, 20, 0, 0, 0, 0, 21,
             17, 16, 16, 20, 0, 17, 16, 16, 16, 16, 18, 18, 18, 18, 20,
-            17, 24, 24, 28, 0, 25, 24, 24, 16, 16, 16, 16, 16, 16, 20,
-            21, 0, 0, 0, 0, 0, 0, 0, 17, 16, 16, 16, 16, 16, 20,
-            17, 18, 18, 22, 0, 19, 18, 18, 16, 16, 16, 16, 16, 16, 20,
+            17, 24, 24, 28, 0, 25, 24, 24, 24, 24, 24, 24, 16, 16, 20,
+            21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 16, 20,
+            17, 18, 18, 22, 0, 19, 18, 18, 18, 18, 18, 18, 16, 16, 20,
             17, 16, 16, 20, 0, 17, 16, 16, 16, 16, 16, 16, 16, 16, 20,
             17, 16, 16, 20, 0, 17, 16, 16, 16, 16, 16, 16, 16, 16, 20,
             25, 24, 24, 24, 26, 24, 24, 24, 24, 24, 24, 24, 24, 24, 28
@@ -124,7 +124,7 @@ public class Model extends JPanel implements ActionListener {
         }
     }
 
-    private void checkMaze(){
+    private void checkMaze() {
 
         int i = 0;
         boolean finished = true;
@@ -289,7 +289,7 @@ public class Model extends JPanel implements ActionListener {
         for (y = 0; y < SCREEN_SIZE; y += BLOCK_SIZE) {
             for (x = 0; x < SCREEN_SIZE; x += BLOCK_SIZE) {
 
-                g2d.setColor(new Color(0,72,251));
+                g2d.setColor(new Color(0, 72, 251));
                 g2d.setStroke(new BasicStroke(5));
 
                 if ((levelData[i] == 0)) {
@@ -315,7 +315,7 @@ public class Model extends JPanel implements ActionListener {
                 }
 
                 if ((screenData[i] & 16) != 0) {
-                    g2d.setColor(new Color(255,255,255));
+                    g2d.setColor(new Color(255, 255, 255));
                     g2d.fillOval(x + 10, y + 10, 6, 6);
                 }
 
@@ -330,7 +330,7 @@ public class Model extends JPanel implements ActionListener {
         score = 0;
         initLevel();
         N_GHOSTS = 6;
-        currentSpeed = 3;
+        currentSpeed = 4;
     }
 
     private void initLevel() {
@@ -366,9 +366,9 @@ public class Model extends JPanel implements ActionListener {
 
         pacman_x = 7 * BLOCK_SIZE;  //start position
         pacman_y = 11 * BLOCK_SIZE;
-        pacmand_x = 0;	//reset direction move
+        pacmand_x = 0;    //reset direction move
         pacmand_y = 0;
-        req_dx = 0;		// reset direction controls
+        req_dx = 0;        // reset direction controls
         req_dy = 0;
         dying = false;
     }
@@ -426,8 +426,6 @@ public class Model extends JPanel implements ActionListener {
             }
         }
     }
-
-
 
 
     @Override
